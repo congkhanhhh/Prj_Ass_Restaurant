@@ -13,6 +13,7 @@ public class GroupTong {
     private NhanVien idNhanVien;
     private int TongCong;
     private int NghiPhep;
+    private int NghiLe;
     private int NghiKhongLuong;
     private int NgayThuong;
     private int NgayLe;
@@ -20,11 +21,12 @@ public class GroupTong {
     public GroupTong() {
     }
 
-    public GroupTong(int id, NhanVien idNhanVien, int TongCong, int NghiPhep, int NghiKhongLuong, int NgayThuong, int NgayLe) {
+    public GroupTong(int id, NhanVien idNhanVien, int TongCong, int NghiPhep, int NghiLe, int NghiKhongLuong, int NgayThuong, int NgayLe) {
         this.id = id;
         this.idNhanVien = idNhanVien;
         this.TongCong = TongCong;
         this.NghiPhep = NghiPhep;
+        this.NghiLe = NghiLe;
         this.NghiKhongLuong = NghiKhongLuong;
         this.NgayThuong = NgayThuong;
         this.NgayLe = NgayLe;
@@ -62,6 +64,14 @@ public class GroupTong {
         this.NghiPhep = NghiPhep;
     }
 
+    public int getNghiLe() {
+        return NghiLe;
+    }
+
+    public void setNghiLe(int NghiLe) {
+        this.NghiLe = NghiLe;
+    }
+
     public int getNghiKhongLuong() {
         return NghiKhongLuong;
     }
@@ -86,6 +96,7 @@ public class GroupTong {
         this.NgayLe = NgayLe;
     }
 
+    
     @Override
     public String toString() {
         return "GroupTong{" + "id=" + id + ", idNhanVien=" + idNhanVien + ", TongCong=" + TongCong + ", NghiPhep=" + NghiPhep + ", NghiKhongLuong=" + NghiKhongLuong + ", NgayThuong=" + NgayThuong + ", NgayLe=" + NgayLe + '}';

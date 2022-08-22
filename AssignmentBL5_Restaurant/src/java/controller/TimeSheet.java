@@ -39,25 +39,7 @@ public class TimeSheet extends HttpServlet {
         request.setAttribute("listGroupTong", listGroupTong);
         request.setAttribute("listBangCong", listBangCong);
         
-        
-//        PrintWriter o = response.getWriter();
-//        for (GroupTong listGT : listGroupTong) {
-//            for (GroupLV listGRLV : listGroupLV) {
-//                if (listGRLV.getIdNhanVien().getIdNhanVien() == listGT.getIdNhanVien().getIdNhanVien()) {
-//                    if (listGRLV.getIdLamViec().getIdCaLam().getIdCa().getIdCa() ==1) {
-//                             o.println(listGRLV.getIdLamViec().getIdCaLam().getIdKH().getTenKH());
-//                    }
-//               
-//                }
-//            }
-//        }
-//        
-        
-        
-        
-        
-        
-        
+     
         
         int size = 0;
         for (BangCong bangCong : listBangCong) {

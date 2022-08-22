@@ -16,17 +16,19 @@
         <title>Document</title>
         <style>
             body {
-                font-size: medium;
+                font-size: 10px;
             }
 
             table,
             th,
             td {
                 border: 1px solid black;
-                padding: 10px;
+                padding: 5px;
                 text-align: center;
             }
-
+            .pd{
+                padding: 10px 50px;
+            }
             table {
                 border-collapse: collapse;
             }
@@ -51,7 +53,7 @@
     </head>
 
     <body>
-
+        <h1 style="text-align: center">Bảng Chấm Công</h1>
         <table border="1">
             <tr>
                 <th rowspan="2" class="xanh">TT</th>
@@ -98,7 +100,7 @@
                     <!--  -->
                     <td rowspan="4" class="cam">${listGT.getTongCong()}</td>  <!-- Tổng công -->
                     <td rowspan="4" class="cam">${listGT.getNghiPhep()}</td> <!--  Nghỉ Phép -->
-                    <td rowspan="4" class="cam">${listGT.getNgayLe()}</td> <!--  Nghỉ Lễ -->
+                    <td rowspan="4" class="cam">${listGT.getNghiLe()}</td> <!--  Nghỉ Lễ -->
                     <td rowspan="4" class="cam">${listGT.getNghiKhongLuong()}</td> <!--  Nghỉ Không Lương -->
                     <td rowspan="4" class="cam">${listGT.getNgayThuong()}</td> <!--  Ngày Thường -->
                     <td rowspan="4" class="cam">${listGT.getNgayLe()}</td> <!--  Ngày Lễ -->
@@ -164,7 +166,50 @@
             <!-- End -->
 
         </table>
+        <br/> 
+        
+        <table>
+            <tr>
+                <th colspan="5" class="xanh">Ký hiệu chấm công</th>
+            </tr>
+            <tr>
+                <td class="xanhNhe">Đi Làm </td>
+                <td class="xanhNhe">X</td>
+                <td class="pd"></td>
+                <td class="xanhNhe">- Nghỉ phép</td>
+                <td class="xanhNhe">P</td>
+            </tr>
+            <tr>
+                <td class="xanhNhe">-Nghỉ không lương</td>
+                <td class="xanhNhe">K</td>
+                <td class="pd"></td>
+                <td class="xanhNhe">-Ngưng Việc</td>
+                <td class="xanhNhe">N</td>
+            </tr>
 
+            <tr>
+                <td class="xanhNhe">-Ốm, điều dưỡng: </td>
+                <td class="xanhNhe">Ô</td>
+                <td class="pd"></td>
+
+            </tr>
+            <tr>
+                <td class="xanhNhe">-Con ốm: </td>
+                <td class="xanhNhe">Cô</td>
+            </tr>
+            <tr>
+                <td class="xanhNhe">-Thai sản </td>
+                <td class="xanhNhe"> TS</td>
+            </tr>
+            <tr>
+                <td class="xanhNhe">-Tai nạn: </td>
+                <td class="xanhNhe"> T</td>
+            </tr>
+            <tr>
+                <td class="xanhNhe"> -Nghỉ lễ</td>
+                <td class="xanhNhe"> NL</td>
+            </tr>
+        </table>
 
     </body>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

@@ -20,10 +20,11 @@ public class GroupTongDBContext extends DBContext {
         ArrayList<GroupTong> listGroupTong = new ArrayList<>();
         try {
 
-            String sql = "SELECT  [idGRT]\n"
+            String sql = "SELECT [idGRT]\n"
                     + "      ,[idNhanvien]\n"
                     + "      ,[TongCong]\n"
                     + "      ,[NghiPhep]\n"
+                    + "      ,[NghiLe]\n"
                     + "      ,[NghiKhongLuong]\n"
                     + "      ,[NgayThuong]\n"
                     + "      ,[NgayLe]\n"
@@ -33,15 +34,16 @@ public class GroupTongDBContext extends DBContext {
             ResultSet rs = stm.executeQuery();
             while (rs.next()) {
                 NhanVienDBContext nhanVienDBContext = new NhanVienDBContext();
-                NhanVien nhanVien = nhanVienDBContext.getNhanVienByID(rs.getInt("idNhanvien"));                
+                NhanVien nhanVien = nhanVienDBContext.getNhanVienByID(rs.getInt("idNhanvien"));
                 GroupTong groupTong = new GroupTong(rs.getInt("idGRT"),
                         nhanVien,
                         rs.getInt("TongCong"),
                         rs.getInt("NghiPhep"),
+                        rs.getInt("NghiLe"),
                         rs.getInt("NghiKhongLuong"),
                         rs.getInt("NgayThuong"),
                         rs.getInt("NgayLe"));
-               listGroupTong.add(groupTong);
+                listGroupTong.add(groupTong);
 
             }
         } catch (Exception ex) {
@@ -49,13 +51,14 @@ public class GroupTongDBContext extends DBContext {
         }
         return listGroupTong;
     }
+
     public static void main(String[] args) {
-         GroupTongDBContext groupTongDBContext = new GroupTongDBContext();
+        GroupTongDBContext groupTongDBContext = new GroupTongDBContext();
         ArrayList<GroupTong> listGroupTong = groupTongDBContext.getAll();
         for (GroupTong groupTong : listGroupTong) {
             System.out.println(groupTong.toString());
         }
-  
+
     }
 
 }
